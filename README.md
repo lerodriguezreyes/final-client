@@ -1,8 +1,11 @@
-# React + Vite
+# Project deliverables:
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Basic requierement: SPA frontend, built with React, consisting of multiple views and implementing all CRUD actions.
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Create a Single Page Application (SPA), using React, consisting of multiple views.
+    - ✔️ App scaffolding completed 3/24/24. 
+    - ⏰Pending, status: conceptualization stage
+2. The React application should be integrated with a backend that should perform all CRUD (Create, Read, Update, Delete) operations.
+    - ⏰Pending 
+3. The project should be deployed online, allowing anyone to access and use the app.
+    - ⏰Pending
