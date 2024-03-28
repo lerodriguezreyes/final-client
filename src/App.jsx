@@ -1,18 +1,41 @@
-
-import Navbar from './components/Navbar'
-import Footer from './components/Footer'
+import "./App.css";
+import { Routes, Route, Navigate, Outlet } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import HomePage from "./pages/HomePage";
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
+import Footer from "./components/Footer";
 
 function App() {
+  const getToken = () => {
+    return localStorage.getItem("authToken");
+  };
+
+  const LoggedIn = () => {
+    return getToken() ? <Outlet /> : <Navigate to="/login" />;
+  };
+
+  const NotLoggedIn = () => {
+    return !getToken() ? <Outlet /> : <Navigate to="/" />;
+  };
 
   return (
-    <>
-    <Navbar />
-    <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-    <Footer />
-      </p>
-    </>
-  )
+    <div className="App">
+      <Navbar />
+
+      <Routes>
+        <Route exact path="/" element={<HomePage />} />
+
+        <Route element={<LoggedIn />}></Route>
+
+        <Route element={<NotLoggedIn />}>
+          <Route path="/signup" element={<SignupPage />} />
+          <Route path="/login" element={<LoginPage />} />
+        </Route>
+      </Routes>
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
