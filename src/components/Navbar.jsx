@@ -28,12 +28,12 @@ function Navbar() {
         <button>Bill Search</button>
       </Link>
       -
-      <Link to="/dadaists">
-        <button>Our community </button>
-      </Link>
-      -
       <Link to="/forum">
         <button>BuzzBoard</button>
+      </Link>
+      -
+      <Link to="/dadaists">
+        <button>Our community </button>
       </Link>
       -
       {getToken() ? (
