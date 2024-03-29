@@ -47,6 +47,12 @@ const ProPub = () => {
       });
   };
 
+  const handleLookup = (addedBill) => {
+    console.log(
+      "These are the chosen parameters to fetch congress bill information"
+    );
+  };
+  
   const handleFetch = (addedBill) => {
     console.log(
       "These are the chosen parameters to fetch congress bill information",
@@ -82,6 +88,7 @@ const ProPub = () => {
                   bill={bill}
                   key={bill.bill_id}
                   handleFetch={handleFetch}
+                  handleLookup={handleLookup}
                 />
               </div>
             );
