@@ -1,5 +1,10 @@
 /* src/index.css */
 
+@font-face {
+  font-family: 'cutout Font';
+  src: url('../assets/NewspaperCutoutWhiteOnBlac-Rg.ttf');
+}
+
 body {
     margin: 0;
   }
