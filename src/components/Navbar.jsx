@@ -16,12 +16,15 @@ function Navbar() {
   //  depending on whether the user is logged in or not
   return (
     <nav>
-    <h1 style={{textAlign:"center" }}> <img style={{height:"150px" }}src="https://res.cloudinary.com/dw1igjvgi/image/upload/v1711642893/quoteFrame_gcgjen.png" alt="quote frame"/> 
+    {/* <h1 style={{textAlign:"center" }}> <img style={{height:"150px" }}src="https://res.cloudinary.com/dw1igjvgi/image/upload/v1711642893/quoteFrame_gcgjen.png" alt="quote frame"/> 
     isDemocracy ||
     <img style={{height:"100px" }} src='https://res.cloudinary.com/dw1igjvgi/image/upload/v1711639080/dadaFrame_nwectm.png' alt="Dada in bold black letters" />
-    </h1>
+    </h1> */}
       <Link to="/">
         <button>Home</button>
+      </Link>
+      <Link to="/billlookup">
+        <button>Bill Search</button>
       </Link>
 
       {getToken() ? (
