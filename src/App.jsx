@@ -5,6 +5,7 @@ import HomePage from "./pages/HomePage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import Footer from "./components/Footer";
+import BillLookup from "./pages/BillLookup";
 
 function App() {
   const getToken = () => {
@@ -25,6 +26,7 @@ function App() {
 
       <Routes>
         <Route exact path="/" element={<HomePage />} />
+        <Route exact path="/billlookup" element={<BillLookup />} />
 
         <Route element={<LoggedIn />}></Route>
 
