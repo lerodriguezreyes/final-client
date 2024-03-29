@@ -15,22 +15,21 @@ function Footer() {
       </p>
       <p id="p2">
         <a
-          href="https://github.com/lerodriguezreyes/dnd-character-generator"
-          className="spread"
+          href="https://github.com/lerodriguezreyes/final-client"
+          target= "_blank"
         >
           {" "}
           SPA Repository{" "}
         </a>
         <a
-          href="https://github.com/lerodriguezreyes/mock-server-dnd-character-generator"
-          className="spread"
+          href="https://github.com/lerodriguezreyes/final-server"
+          target= "_blank"
         >
           {" "}
           Mock server repository{" "}
         </a>
         <a
-          href="mailto:lerodriguezreyes@outlook.com?subject=About%20Your%20DND%20Generator%20"
-          className="spread"
+          href="mailto:lerodriguezreyes@outlook.com?subject=About%20is%20Democracy%20%20"
         >
           {" "}
           Reach Out!{" "}

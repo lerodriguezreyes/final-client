@@ -5,15 +5,11 @@ import { useContext } from "react"; // <== IMPORT
 import { AuthContext } from "../context/auth.context"; // <== IMPORT
 
 function Navbar() {
-  // Subscribe to the AuthContext to gain access to
-  // the values from AuthContext.Provider `value` prop
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext); // <== ADD
 
   const getToken = () => {
     return localStorage.getItem("authToken");
   };
-  //  Update the rendering logic to display different content
-  //  depending on whether the user is logged in or not
   return (
     <nav>
       {/* <h1 style={{textAlign:"center" }}> <img style={{height:"150px" }}src="https://res.cloudinary.com/dw1igjvgi/image/upload/v1711642893/quoteFrame_gcgjen.png" alt="quote frame"/> 
@@ -42,7 +38,9 @@ function Navbar() {
             <button>UserDashboard</button>
           </Link>
           -<button onClick={logOutUser}>Logout</button>
-          {/* <span>{user && user.name}</span> */}
+          <span> Welcome back </span>
+          <span>{user && user.name}</span>
+          <span>!</span>
         </>
       ) : (
         <>
