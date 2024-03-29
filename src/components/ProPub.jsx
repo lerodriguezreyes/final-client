@@ -1,20 +1,13 @@
 import { propubget } from "../services/ProPublicaAPI";
 import { useState } from "react";
 import SearchCard from "./SearchCard";
+import { post } from "../services/authService";
+import { useNavigate } from "react-router-dom";
 
 const ProPub = () => {
   const [query, setQuery] = useState("");
   const [offset, setOffset] = useState(0);
   const [proResults, setProResults] = useState([]);
-  const [congressQueryObj, setCongressQueryObj] = useState({
-    congress: "",
-    billtype: "",
-    billnumber: "",
-  });
-
-  const [congressQuery, setCongressQuery] = useState("");
-  const [billTypeQuery, setBillTypeQuery] = useState("");
-  const [billNumberQuery, setBillNumberQuery] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -47,19 +40,24 @@ const ProPub = () => {
       });
   };
 
-  const handleLookup = (addedBill) => {
-    console.log(
-      "These are the chosen parameters to fetch congress bill information"
-    );
-  };
-  
-  const handleFetch = (addedBill) => {
-    console.log(
-      "These are the chosen parameters to fetch congress bill information",
-      setCongressQuery,
-      setBillTypeQuery,
-      setBillNumberQuery
-    );
+  const handleFollow = (bill) => {
+    // chooseBill();
+    const queryObject = {
+      title: bill.title,
+      congress: +bill.bill_id.split("-")[1],
+      billType: bill.bill_type.toLowerCase(),
+      billNumber: +bill.bill_slug.replace(/\D/g, ""),
+    };
+
+    console.log("This is the query object", queryObject);
+
+    post("/bills/new", queryObject)
+      .then((response) => {
+        console.log("This is the bill", response.data);
+      })
+      .catch((err) => {
+        console.log("Error with bill", err);
+      });
   };
 
   return (
@@ -76,20 +74,24 @@ const ProPub = () => {
         </label>
         <button type="submit">Search</button>
       </form>
-
       <button onClick={(e) => handleNext(e)}>Next</button>
-
       {proResults.length > 0 && (
         <>
           {proResults.map((bill) => {
             return (
               <div>
-                <SearchCard
-                  bill={bill}
-                  key={bill.bill_id}
-                  handleFetch={handleFetch}
-                  handleLookup={handleLookup}
-                />
+                <h4>Title: {bill.title}</h4>
+                <p>Congress: {bill.bill_id.split("-")[1]}</p>
+                <p>Bill type: {bill.bill_type.toUpperCase()}</p>
+                <p>Bill number: {bill.bill_slug.replace(/\D/g, "")}</p>
+                <button onClick={() => handleFollow(bill)}>
+                  {" "}
+                  Fetch Specs{" "}
+                </button>
+                <button onClick={() => handleFollow(bill)}>
+                  {" "}
+                  Follow Bill{" "}
+                </button>
               </div>
             );
           })}
