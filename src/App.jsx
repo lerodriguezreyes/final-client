@@ -6,6 +6,11 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import Footer from "./components/Footer";
 import BillLookup from "./pages/BillLookup";
+import Community from "./pages/Community";
+import Forum from "./pages/Forum";
+import BillDetails from "./pages/BillDetails";
+import UserDashboard from "./pages/UserDashboard"
+import Error from "./pages/Error"
 
 function App() {
   const getToken = () => {
@@ -25,14 +30,20 @@ function App() {
       <Navbar />
 
       <Routes>
-        <Route exact path="/" element={<HomePage />} />
-        <Route exact path="/billlookup" element={<BillLookup />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/dadaists" element={<Community />} />
+        <Route path="/billlookup" element={<BillLookup />} />
+        <Route path="/details" element={<BillDetails />} />
+        <Route path="/forum" element={<Forum />} />
+        <Route path="*" element={<Error />} />
+        
 
         <Route element={<LoggedIn />}></Route>
 
         <Route element={<NotLoggedIn />}>
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
+          <Route path="/user" element={<UserDashboard />} />
         </Route>
       </Routes>
       <Footer />
