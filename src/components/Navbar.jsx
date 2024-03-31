@@ -1,5 +1,3 @@
-// src/components/Navbar.jsx
-
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
@@ -7,15 +5,12 @@ import { elastic as Menu } from "react-burger-menu";
 import "../styles/navBar.css";
 
 function Navbar() {
-  const { isLoggedIn, user, logOutUser } = useContext(AuthContext); // <== ADD
+  const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
   const getToken = () => {
     return localStorage.getItem("authToken");
   };
   return (
-    <div id="outer-container">
-      <Menu pageWrapId={"page-wrap"} outerContainerId={"outer-container"} />
-      <main id="page-wrap">
         <nav className="Navcontainer">
           <img
             id="navFrame"
@@ -24,16 +19,9 @@ function Navbar() {
           />
           <div id="navHeader">
             <h1>
-              isDemocracy? ||
+              isDem0cracy ? ||
               <img
                 id="dadaHand"
-                style={{ height: "100px" }}
-                src="https://res.cloudinary.com/dw1igjvgi/image/upload/v1711639080/dadaFrame_nwectm.png"
-                alt="Dada in bold black letters"
-              />
-              <img
-                id="dadaHandBurger"
-                style={{ height: "75px" }}
                 src="https://res.cloudinary.com/dw1igjvgi/image/upload/v1711639080/dadaFrame_nwectm.png"
                 alt="Dada in bold black letters"
               />
@@ -42,25 +30,25 @@ function Navbar() {
           <ul>
             <li>
               <Link to="/">
-                <button>Home</button>
+                <button className="navButton">Home</button>
               </Link>
               ☚
             </li>
             <li>
               <Link to="/billlookup">
-                <button>Bill Search</button>
+                <button className="navButton">Bill Search</button>
               </Link>
               ☚
             </li>
             <li>
               <Link to="/forum">
-                <button>BuzzBoard</button>
+                <button className="navButton">BuzzBoard</button>
               </Link>
               ☚
             </li>
             <li>
               <Link to="/dadaists">
-                <button>Our community </button>
+                <button className="navButton">Our community </button>
               </Link>
               ☚
             </li>
@@ -68,25 +56,25 @@ function Navbar() {
               <>
                 <li>
                   <Link to="/user">
-                    <button>UserDashboard</button>
+                    <button className="navButton">UserDashboard</button>
                   </Link>
                   ☚
                 </li>
                 <li>
-                  <button onClick={logOutUser}>Logout</button>☚
+                  <button className="navButton" onClick={logOutUser}>Logout</button>☚
                 </li>
               </>
             ) : (
               <>
                 <li>
                   <Link to="/signup">
-                    <button>Sign Up</button>
+                    <button className="navButton">Sign Up</button>
                   </Link>
                   ☚
                 </li>
                 <li>
-                  <Link to="/login">
-                    <button>Login</button>
+                  <Link to="/login" >
+                    <button className="navButton">Login</button>
                   </Link>
                   ☚
                 </li>
@@ -102,8 +90,6 @@ function Navbar() {
             </>
           ) : null}
         </nav>
-      </main>
-    </div>
   );
 }
 

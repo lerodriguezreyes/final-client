@@ -1,127 +1,100 @@
-
-
 nav {
-    position: relative;
-    width: 100%;
-    height: fit-content;
-    background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711897587/imageedit_2_6618379756_jm58qu.png);
-    background-size: cover;
-  }
+  position: relative;
+  width: 100%;
+  height: fit-content;
+  background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711897587/imageedit_2_6618379756_jm58qu.png);
+  background-size: cover;
+}
 
-  #navFrame {
-    height: 100px;
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
+#navFrame {
+  position: absolute;
+  left: 0;
+  top: 0;
+}
 
-  nav ul {
-    display: flex;
-    flex-flow: row;
-    flex-wrap: wrap;
-    list-style-type: "\261B";
-    place-content: center;
-    margin: 0
-  }
+nav ul {
+  display: flex;
+  flex-flow: row;
+  flex-wrap: wrap;
+  list-style-type: "\261B";
+  place-content: center;
+  margin: 0;
+}
 
-  nav li {
-    padding-right: 25px;
-    font-size: 25px;
-  }
+nav li {
+  padding-right: 25px;
+  font-size: 25px;
+}
 
-  .welcome{
-    text-align: center;
-    font-family: "kidnapped";
-    font-size: 20pt;
-    padding: 5px;
-    margin: 0;
-  }
+.navButton {
+  color: black;
+  background-image: url("https://res.cloudinary.com/dw1igjvgi/image/upload/v1711641879/buttonsedit_s4nuzk.png");
+  font-family: "Old newspaper font", sans-serif;
+  align-self: center;
+  border-style: solid;
+  border-width: 2px;
+}
 
-  h1{
-    font-family: "";
-    text-align: center;
-    font-size: 50pt;
-    padding-bottom: 0;
-    margin-bottom: 0;
-  }
+.welcome {
+  text-align: center;
+  font-family: "kidnapped";
+  font-size: 20pt;
+  padding: 5px;
+  margin: 0;
+}
 
-  /* Position and sizing of burger button */
-.bm-burger-button {
-    position: fixed;
-    width: 36px;
-    height: 30px;
-    left: 36px;
-    top: 36px;
-  }
-  
-  /* Color/shape of burger icon bars */
-  .bm-burger-bars {
-    background: #373a47;
-  }
-  
-  /* Color/shape of burger icon bars on hover*/
-  .bm-burger-bars-hover {
-    background: #a90000;
-  }
-  
-  /* Position and sizing of clickable cross button */
-  .bm-cross-button {
-    height: 24px;
-    width: 24px;
-  }
-  
-  /* Color/shape of close button cross */
-  .bm-cross {
-    background: #bdc3c7;
-  }
-  
-  /*
-  Sidebar wrapper styles
-  Note: Beware of modifying this element as it can break the animations - you should not need to touch it in most cases
-  */
-  .bm-menu-wrap {
-    position: fixed;
-    height: 100%;
-  }
-  
-  /* General sidebar styles */
-  .bm-menu {
-    background: #373a47;
-    padding: 2.5em 1.5em 0;
-    font-size: 1.15em;
-  }
-  
-  /* Morph shape necessary with bubble or elastic */
-  .bm-morph-shape {
-    fill: #373a47;
-  }
-  
-  /* Wrapper for item list */
-  .bm-item-list {
-    color: #b8b7ad;
-    padding: 0.8em;
-  }
-  
-  /* Individual item */
-  .bm-item {
-    display: inline-block;
-  }
-  
-  /* Styling of overlay */
-  .bm-overlay {
-    background: rgba(0, 0, 0, 0.3);
-  }
+nav h1 {
+  font-family: "king";
+  font-size: 20pt;
+  text-align: center;
+  padding-top: 10px;
+  margin: 0;
+}
 
-  @media only screen and (min-width: 391px) {
-    #dadaHandBurger{
-      visibility: hidden;
-      width: 0;
-    }
-  }
 
-  @media only screen and (max-width: 390px) {
-  #dadaHand{
-    visibility: hidden;
-    width: 0;
+@media only screen and (min-width: 390px) {
+  #dadaHand {
+    height: 47px;
   }
+  #navFrame{
+    height: 75px;
+  }
+  .navButton{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  nav h1 {
+    font-size: 45pt;
+    padding-top: 30px;
+  }
+  .navButton{
+    font-size: 16px;
+  }
+  #dadaHand {
+    height: 50px
+  }
+  ul{
+    right: 50px;
+  }
+  #navFrame{
+    height: 115px;
+  }
+}
+
+@media only screen and (min-width: 1000px) {
+  nav h1 {
+    font-size: 70pt;
+    padding-top: 35px;
+  }
+  .navButton{
+    font-size: 20px;
+  }
+  #dadaHand {
+    height: 75px;
+  }
+  #navFrame{
+    height: 150px;
+  }  
 }
