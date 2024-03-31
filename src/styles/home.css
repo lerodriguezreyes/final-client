@@ -1,0 +1,16 @@
+button {
+color:black;
+background-image: url("https://res.cloudinary.com/dw1igjvgi/image/upload/v1711641879/buttonsedit_s4nuzk.png");
+font-family: 'Old newspaper font', sans-serif;
+align-self: center;
+border-style: solid;
+border-width: 2px;
+font-size: 1.3rem;
+}
+
+.video-responsive iframe {
+    left: 0;
+    top: 0;
+    height: 400px;
+    width: 350px;
+  }
