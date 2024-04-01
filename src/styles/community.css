@@ -1,0 +1,50 @@
+#community {
+    background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711418796/isDemocracy/dalle1_yayynk.png);
+    background-size: contain;
+}
+
+#community h1{
+    font-family: dada antiquerist;
+    background-color: rgba(250, 235, 215, 0.678);
+    font-size: 30pt;
+    text-align: center;
+    margin:0;
+}
+
+.userCard {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+
+.cardContainer {
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  width: 300px;
+  height: 300px;
+  display: block;
+}
+
+.cardText1 {
+  position: absolute;
+  width: 100%;
+  height: fit-content;
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  font-size: 20px;
+  text-align: center;
+  margin: 0;
+  transition: 0.5s ease;
+  opacity: 0;
+}
+
+.cardText1 {
+  bottom: 15px;
+}
+
+.cardContainer:hover .cardText1{
+  opacity: 1;
+}
