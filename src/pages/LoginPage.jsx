@@ -1,12 +1,10 @@
 // src/pages/LoginPage.jsx
 
 import { useState, useContext } from "react";
-
 import { AuthContext } from "../context/auth.context";
-
 import { Link, useNavigate } from "react-router-dom";
-
 import { post } from "../services/authService";
+import "../styles/form.css"
 
 function LoginPage() {
   //   const [email, setEmail] = useState("");
@@ -48,10 +46,11 @@ function LoginPage() {
 
   return (
     <div className="LoginPage">
+      <div className="cutoutShadow">
+      <div className="loginFormCutout">
       <h1>Login</h1>
-
-      <form onSubmit={handleLoginSubmit}>
-        <label>Email:</label>
+      <form className="loginForm" onSubmit={handleLoginSubmit}>
+        <label className="loginFormLabel">Email:</label>
         <input
           type="email"
           name="email"
@@ -59,20 +58,22 @@ function LoginPage() {
           onChange={handleTextChange}
         />
 
-        <label>Password:</label>
+        <label className="loginFormLabel">Password:</label>
         <input
           type="password"
           name="password"
           value={thisUser.password}
           onChange={handleTextChange}
         />
-
+        <br/>
         <button type="submit">Login</button>
       </form>
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
+      {errorMessage && <p className="loginFormText">{errorMessage}</p>}
 
-      <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+      <p className="loginFormText">Don't have an account yet?</p>
+      <Link className="loginFormLink" to={"/signup"}> Sign Up</Link>
+    </div>
+    </div>
     </div>
   );
 }

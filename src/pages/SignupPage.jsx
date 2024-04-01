@@ -44,63 +44,55 @@ function SignupPage() {
         console.log(err);
         setErrorMessage(err.response.data.message);
         setNewUser({
-            email: "",
-            password: "",
-            name: "",
-          })
+          email: "",
+          password: "",
+          name: "",
+        });
       });
   };
 
   return (
     <div className="SignupPage">
-      <h1>Sign Up</h1>
+      <div className="cutoutShadow">
+        <div className="signUpFormCutout">
+          <h1>Sign Up</h1>
 
-      <form onSubmit={handleSignupSubmit}>
-        <label>Email:</label>
-        <input
-          type="email"
-          name="email"
-          value={newUser.email}
-          onChange={handleTextChange}
-        />
+          <form onSubmit={handleSignupSubmit}>
+            <label>Email:</label>
+            <input
+              type="email"
+              name="email"
+              value={newUser.email}
+              onChange={handleTextChange}
+            />
 
-        <label>Password:</label>
-        <input
-          type="password"
-          name="password"
-          value={newUser.password}
-          onChange={handleTextChange}
-        />
+            <label>Password:</label>
+            <input
+              type="password"
+              name="password"
+              value={newUser.password}
+              onChange={handleTextChange}
+            />
 
-        <label>Name:</label>
-        <input
-          type="text"
-          name="name"
-          value={newUser.name}
-          onChange={handleTextChange}
-        />
+            <label>Name:</label>
+            <input
+              type="text"
+              name="name"
+              value={newUser.name}
+              onChange={handleTextChange}
+            />
+            <br />
+            <button type="submit">Sign Up</button>
+          </form>
 
-        <button type="submit">Sign Up</button>
-      </form>
+          {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      {errorMessage && <p className="error-message">{errorMessage}</p>}
-
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+          <p>Already have account?</p>
+          <Link to={"/login"}> Login</Link>
+        </div>
+      </div>
     </div>
   );
 }
 
 export default SignupPage;
-
-
-
-
-
-
-
-
-
-
-
-

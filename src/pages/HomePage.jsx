@@ -1,17 +1,26 @@
 import YoutubeEmbed from "../components/YoutubeEmbed";
-import "../styles/home.css"
-
+import "../styles/home.css";
 
 function HomePage() {
   return (
-    <div>
-      <h2>So this is how "they" make bills...</h2>
-      <YoutubeEmbed embedId="tyeJ55o3El0"/>
-      <div>
-      <h2> 290,007 bills in 50 years </h2> 
-      <h2>Where do we fit in this process? |</h2>
+    <div className="homePage">
+      <YoutubeEmbed embedId="tyeJ55o3El0" />
+      <div className="grid">
+        <div className="statsAndAction">
+          <div className="columns">
+            <div className="cutout">
+              <p className="center">Bills in</p>
+              <p className="bigNumber">290,007 </p>
+              <p className="center">50 years</p>
+            </div>
+          </div>
+          <div className="columns">
+            <div className="cutout">
+              <p id="slogan">Where do we fit in this process?</p>
+            </div>
+          </div>
+        </div>
       </div>
-      <h2>Let's talk about this!</h2>
     </div>
   );
 }

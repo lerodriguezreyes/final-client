@@ -1,33 +1,12 @@
-/* src/index.css */
-
-@font-face {
-  font-family: "cutout";
-  src: url("../assets/NewspaperCutout.ttf");
-}
-@font-face {
-  font-family: "king";
-  src: url("../assets/Kingthings.ttf");
-}
-@font-face {
-  font-family: "kidnapped";
-  src: url("../assets/Kidnapped.ttf");
+input,
+textarea {
+  width: 300px;
+  padding: 10px;
+  display: inline-block;
+  margin: 10px;
 }
 
-body {
-  margin: 0;
-}
-
-button {
-  color: black;
-  background-image: url("https://res.cloudinary.com/dw1igjvgi/image/upload/v1711641879/buttonsedit_s4nuzk.png");
-  font-family: "Old newspaper font", sans-serif;
-  align-self: center;
-  border-style: solid;
-  border-width: 2px;
-  font-size: 1.3rem;
-}
-
-Label {
+.loginFormLabel {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,36 +18,16 @@ Label {
   font-size: 30pt;
 }
 
-.LoginPage,
-.SignupPage {
-  background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711417242/isDemocracy/4e9d789381021.5602dda746f89_ykquto.jpg);
-  background-size: 50%;
-  height: 844;
-  border: 1px solid grey;
-  text-align: center;
-  border-radius: 5px;
-}
-
-.LoginPage h1 {
-  font-family: "kidnapped";
-}
-
-.SignupPage {
-  background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711418143/isDemocracy/politik2_d0s93f.png);
-  background-size: cover;
-}
-
 .cutoutShadow {
   filter: drop-shadow(-1px 6px 3px rgba(0, 0, 0, 0.5));
   width: fit-content;
 }
 
-.cutout {
+.signUpFormCutout {
   height: auto;
   width: fit-content;
-  overflow: hidden;
   padding: 20px;
-  background-image: url(https://e0.pxfuel.com/wallpapers/476/554/desktop-wallpaper-newspaper-comics-old-newspaper-newspaper-and-newspaper-print-background.jpg);
+  background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711641879/buttonsedit_s4nuzk.png);
   clip-path: polygon(
     1% 2%,
     3.5% 0.1%,
