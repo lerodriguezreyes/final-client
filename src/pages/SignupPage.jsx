@@ -79,6 +79,13 @@ function SignupPage() {
               type="text"
               name="name"
               value={newUser.name}
+              onChange={handleTextChange} />
+
+            <label>Provide an image for your profile:</label>
+            <input
+              type="text"
+              name="profilePicURL"
+              value={newUser.profilePicURL}
               onChange={handleTextChange}
             />
             <br />
