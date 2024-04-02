@@ -21,7 +21,7 @@ function Footer() {
           </span>{" "}
           by Luis Emmanuel
         </p>
-        <p Id="p2">
+        <p id="p2">
           <a
             href="https://github.com/lerodriguezreyes/final-client"
             target="_blank"
