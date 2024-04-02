@@ -1,7 +1,6 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
-import { elastic as Menu } from "react-burger-menu";
 import "../styles/navBar.css";
 
 function Navbar() {
