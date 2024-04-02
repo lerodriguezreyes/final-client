@@ -1,5 +1,3 @@
-// src/pages/SignupPage.jsx
-
 import { useState, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
@@ -7,32 +5,18 @@ import { post } from "../services/authService";
 import { fileChange } from "../services/imageUpload";
 
 function SignupPage() {
-  //   const [email, setEmail] = useState("");
-  //   const [password, setPassword] = useState("");
-  //   const [name, setName] = useState("");
-
   const [newUser, setNewUser] = useState({
     email: "",
     password: "",
     name: "",
   });
-
   const [errorMessage, setErrorMessage] = useState(undefined);
-
   const { storeToken, authenticateUser } = useContext(AuthContext);
-
   const [disabled, setDisabled] = useState(false);
-
   const navigate = useNavigate();
-
-  //   const handleEmail = (e) => setEmail(e.target.value);
-  //   const handlePassword = (e) => setPassword(e.target.value);
-  //   const handleName = (e) => setName(e.target.value);
-
   const handleTextChange = (e) => {
     setNewUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
-
   const handleSignupSubmit = (e) => {
     e.preventDefault();
 
