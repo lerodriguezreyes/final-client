@@ -1,10 +1,10 @@
-import YoutubeEmbed from "../components/YoutubeEmbed";
+import VideoPlayer from "../components/VideoPlayer";
 import "../styles/home.css";
 
 function HomePage() {
   return (
     <div className="homePage">
-      <YoutubeEmbed embedId="tyeJ55o3El0" />
+      <VideoPlayer />
       <div className="grid">
         <div className="statsAndAction">
           <div className="columns">
