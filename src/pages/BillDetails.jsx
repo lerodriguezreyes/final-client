@@ -2,11 +2,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { get } from "../services/authService";
-import {
-  returnReadableTime,
-  returnReadableTimeShort,
-  returnReadableTimeOnlyDate,
-} from "../services/time";
+import { returnReadableTimeOnlyDate } from "../services/time";
 
 function BillDetails() {
   const { billId } = useParams();
@@ -15,6 +11,9 @@ function BillDetails() {
   const navigate = useNavigate();
 
   useEffect(() => {
+
+    console.log("this is the bill ID ===>", billId)
+
     get(`/bills/details/${billId}`)
       .then((response) => {
         console.log("This object has the bill's details ===>", response.data);
@@ -47,7 +46,7 @@ function BillDetails() {
             {returnReadableTimeOnlyDate(billDetails.latestActionDate)}{" "}
           </p>
           <p> Bill Summary </p>
-          {billDetails.summary.text ? (
+          {billDetails.summary?.text ? (
             <div
               dangerouslySetInnerHTML={{ __html: billDetails.summary.text }}
             />

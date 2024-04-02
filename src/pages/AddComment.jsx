@@ -1,4 +1,4 @@
-import React from "react";
+
 import { post } from "../services/authService";
 
 function addComment() {

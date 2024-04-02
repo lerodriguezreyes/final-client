@@ -23,9 +23,9 @@ function Community() {
         <>
           {users.map((user) => {
             return (
-              <div className="userCard">
-                <div className="cardContainer" key={user._id}>
-                  <p className="cardText1"> Mi name is {user.name}. 
+              <div className="userCard" key={user._id}>
+                <div className="cardContainer">
+                  <p className="cardText1"> Mi name is {user.name} 
                   <br/> Reach out - {user.email}</p>
                   <img className="image" src={user.profilePicURL} />
                 </div>
