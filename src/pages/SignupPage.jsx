@@ -4,6 +4,7 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
 import { post } from "../services/authService";
+import { fileChange } from "../services/imageUpload";
 
 function SignupPage() {
   //   const [email, setEmail] = useState("");
@@ -19,6 +20,8 @@ function SignupPage() {
   const [errorMessage, setErrorMessage] = useState(undefined);
 
   const { storeToken, authenticateUser } = useContext(AuthContext);
+
+  const [disabled, setDisabled] = useState(false);
 
   const navigate = useNavigate();
 
@@ -51,6 +54,13 @@ function SignupPage() {
       });
   };
 
+  const handlePhoto = (e) => {
+    setDisabled(true);
+    fileChange(e).then((response) => {
+      setImages(response.data.image);
+      setDisabled(false);
+    });
+  };
   return (
     <div className="SignupPage">
       <div className="cutoutShadow">
@@ -79,14 +89,16 @@ function SignupPage() {
               type="text"
               name="name"
               value={newUser.name}
-              onChange={handleTextChange} />
+              onChange={handleTextChange}
+            />
 
             <label>Provide an image for your profile:</label>
             <input
-              type="text"
-              name="profilePicURL"
-              value={newUser.profilePicURL}
-              onChange={handleTextChange}
+              type="file"
+              className="profilePicUrl"
+              id="images"
+              name="images"
+              onChange={handlePhoto}
             />
             <br />
             <button type="submit">Sign Up</button>
