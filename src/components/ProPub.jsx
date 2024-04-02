@@ -8,7 +8,8 @@ const ProPub = () => {
   const [query, setQuery] = useState("");
   const [offset, setOffset] = useState(0);
   const [proResults, setProResults] = useState([]);
-
+  const navigate = useNavigate();
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     propubget(query, offset)
@@ -41,7 +42,6 @@ const ProPub = () => {
   };
 
   const handleFollow = (bill) => {
-    // chooseBill();
     const queryObject = {
       title: bill.title,
       congress: +bill.bill_id.split("-")[1],
@@ -54,6 +54,9 @@ const ProPub = () => {
     post("/bills/new", queryObject)
       .then((response) => {
         console.log("This is the bill", response.data);
+        console.log("This is the bill ID from Mongo get request", response.data.bill._id)
+        navigate(`/details/${response.data.bill._id}`);
+        
       })
       .catch((err) => {
         console.log("Error with bill", err);
