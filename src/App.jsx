@@ -33,17 +33,19 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/dadaists" element={<Community />} />
         <Route path="/billlookup" element={<BillLookup />} />
-        <Route path="/details" element={<BillDetails />} />
+        <Route path="/details/:billId" element={<BillDetails />} />
         <Route path="/forum" element={<Forum />} />
         <Route path="*" element={<Error />} />
         
 
-        <Route element={<LoggedIn />}></Route>
+        <Route element={<LoggedIn />}>
+        <Route path="/user" element={<UserDashboard />} />
+        <Route path="/comment" element={<UserDashboard />} />
+        </Route>
 
         <Route element={<NotLoggedIn />}>
           <Route path="/signup" element={<SignupPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/user" element={<UserDashboard />} />
         </Route>
       </Routes>
       <Footer />
