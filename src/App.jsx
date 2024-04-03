@@ -11,6 +11,7 @@ import Forum from "./pages/Forum";
 import BillDetails from "./pages/BillDetails";
 import UserDashboard from "./pages/UserDashboard"
 import Error from "./pages/Error"
+import BillPost from "./pages/BillPost";
 
 function App() {
   const getToken = () => {
@@ -41,6 +42,7 @@ function App() {
         <Route element={<LoggedIn />}>
         <Route path="/user" element={<UserDashboard />} />
         <Route path="/comment" element={<UserDashboard />} />
+        <Route path="/billpost/:billId" element={<BillPost />} />
         </Route>
 
         <Route element={<NotLoggedIn />}>
