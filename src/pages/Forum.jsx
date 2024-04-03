@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { get } from "../services/authService";
 import { returnReadableTimeOnlyDate } from "../services/time";
-
+import { Link } from "react-router-dom";
 function Forum() {
   const [allBills, setAllBills] = useState([]);
 
@@ -27,7 +27,7 @@ function Forum() {
                 <div>
                   <p>
                     {" "}
-                    {bill.title} </p>
+                    <Link to={`/billpost/${bill._id}`}>{bill.title}</Link></p>
                     <p> Conversation start:{" "}
                     {returnReadableTimeOnlyDate(bill.createdAt)} </p>
                     <p>Last comment:{" "}
