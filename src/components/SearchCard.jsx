@@ -8,7 +8,6 @@ function SearchCard({bill, handleFetch, handleLookup}) {
     <p>Bill type: {bill.bill_type.toUpperCase()}</p>
     <p>Bill number: {bill.bill_slug.replace(/\D/g,'')}</p>
     <button onClick={handleFetch}> Fetch Specs </button>
-    <button onClick={handleLookup}> Add to Lookup List </button>
     </div>
   )
 }

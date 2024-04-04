@@ -48,3 +48,9 @@
 .cardContainer:hover .cardText1{
   opacity: 1;
 }
+
+.gridContainer2 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}

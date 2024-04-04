@@ -1,0 +1,66 @@
+#BuzzBoard {
+  background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711418145/isDemocracy/politik3_ghywxm.png);
+}
+
+#BuzzBoard h1 {
+    margin: 0;
+    font-family: "kidnapped";
+    font-size: 32pt;
+    background-color: rgb(235,227,206);
+    color: rgb(171,31,35);
+}
+.cardHeader1,
+.text1 {
+  margin: 0;
+}
+
+.card1:hover {
+  background-color: rgb(222, 22, 0);
+  background-image: none;
+}
+
+.gridContainer1 {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 10px;
+}
+
+.cardContainer1 {
+  display: flex;
+  justify-content: center;
+}
+ */
+ .cardContainer1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .card1 {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    width: 100%; 
+    max-width: 600px;
+    background-color: rgb(233,225,204);
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  .cardHeader1 {
+    font-size: 20px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  .text1 {
+    font-size: 16px;
+    color: #666;
+    margin: 0; 
+    text-align: end; 
+  }
+  
+  .text1 + .text1 {
+    margin-left: 10px; 
+  }

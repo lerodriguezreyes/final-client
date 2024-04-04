@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { get, post } from "../services/authService";
 import { returnReadableTimeOnlyDate } from "../services/time";
+import "../styles/billpostPage.css"
 
 function BillPost() {
   const [getBillDetails, setGetBillDetails] = useState(null);
@@ -28,7 +29,7 @@ function BillPost() {
     navigate("/forum");
   };
   const handleChange = (e) => {
-    setComment(e.target.value);
+    setComment(e.target.value)
   };
 
   const handleSubmit = (e) => {
@@ -55,8 +56,7 @@ function BillPost() {
           </p>
           <p>Sponsor(s): {getBillDetails.sponsors}</p>
           <p>Latest action: {getBillDetails.latestActionText}</p>
-          <p>Latest action date: </p>
-          {returnReadableTimeOnlyDate(getBillDetails.latestActionDate)}{" "}
+          <p>Latest action date: {returnReadableTimeOnlyDate(getBillDetails.latestActionDate)}{" "} </p>
           {getBillDetails.latestTextPdfLink ? (
             <Link target="_blank" to={getBillDetails.latestTextPdfLink}>
               {" "}

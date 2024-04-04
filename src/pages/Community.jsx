@@ -20,7 +20,7 @@ function Community() {
     <div id="community">
       <h1>Dadaists of the World, unite!</h1>
       {users.length > 0 && (
-        <>
+        <div className="gridContainer2">
           {users.map((user) => {
             return (
               <div className="userCard" key={user._id}>
@@ -32,7 +32,7 @@ function Community() {
               </div>
             );
           })}
-        </>
+        </div>
       )}
     </div>
   );

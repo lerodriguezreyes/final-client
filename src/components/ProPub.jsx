@@ -1,6 +1,5 @@
 import { propubget } from "../services/ProPublicaAPI";
 import { useState } from "react";
-import SearchCard from "./SearchCard";
 import { post } from "../services/authService";
 import { useNavigate } from "react-router-dom";
 
@@ -9,7 +8,7 @@ const ProPub = () => {
   const [offset, setOffset] = useState(0);
   const [proResults, setProResults] = useState([]);
   const navigate = useNavigate();
-  
+
   const handleSubmit = (e) => {
     e.preventDefault();
     propubget(query, offset)
@@ -54,9 +53,11 @@ const ProPub = () => {
     post("/bills/new", queryObject)
       .then((response) => {
         console.log("This is the bill", response.data);
-        console.log("This is the bill ID from Mongo get request", response.data.bill._id)
+        console.log(
+          "This is the bill ID from Mongo get request",
+          response.data.bill._id
+        );
         navigate(`/details/${response.data.bill._id}`);
-        
       })
       .catch((err) => {
         console.log("Error with bill", err);
@@ -68,37 +69,48 @@ const ProPub = () => {
       <form onSubmit={handleSubmit}>
         <label>
           Search Bills
+          </label> 
           <input
             type="text"
             name="query"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
+            className="searchBar"
           />
-        </label>
+        
         <button type="submit">Search</button>
+        <button onClick={(e) => handleNext(e)}>Next</button>
       </form>
-      <button onClick={(e) => handleNext(e)}>Next</button>
+      
       {proResults.length > 0 && (
-        <>
+        <div className="gridContainer">
           {proResults.map((bill) => {
             return (
-              <div>
-                <h4>Title: {bill.title}</h4>
-                <p>Congress: {bill.bill_id.split("-")[1]}</p>
-                <p>Bill type: {bill.bill_type.toUpperCase()}</p>
-                <p>Bill number: {bill.bill_slug.replace(/\D/g, "")}</p>
-                <button onClick={() => handleFollow(bill)}>
+              <div className="cardContainer">
+              <div className="card">
+                <h4 className="cardHeader">Title: {bill.title}</h4>
+                <div className="infoRow">
+                  <p className="text">
+                    Congress: {bill.bill_id.split("-")[1]}{" "}
+                  </p>
+                  .
+                  <p className="text">
+                    Bill number: {bill.bill_type.toUpperCase()}-
+                    {bill.bill_slug.replace(/\D/g, "")}
+                  </p>
+                </div>
+                <button
+                  className="cardbutton"
+                  onClick={() => handleFollow(bill)}
+                >
                   {" "}
                   Fetch Specs{" "}
                 </button>
-                <button onClick={() => handleFollow(bill)}>
-                  {" "}
-                  Follow Bill{" "}
-                </button>
+              </div>
               </div>
             );
           })}
-        </>
+        </div>
       )}
     </div>
   );

@@ -11,21 +11,28 @@
   max-height: fit-content;
   width: fit-content;
   margin: 30px;
-  margin-top: 10px;
   filter: drop-shadow(-1px 6px 3px rgba(0, 0, 0, 0.5));
 }
-#slogan {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: 15pt;
+#slogan1 {
+  font-family: "Impact";
+  font-size: 30pt;
   color: rgb(105, 5, 5);
   background-color: rgba(255, 238, 0, 0.486);
+}
+
+#slogan2 {
+  font-family: "King";
+  font-size: 25pt;
+  color: black;
+  background-color: rgb(255, 0, 0);
   text-align: center;
 }
+
 .bigNumber {
   font-family: "cutout";
   font-weight: bold;
   background-color: rgba(255, 238, 0, 0.486);
-  font-size: 40pt;
+  font-size: 60pt;
   margin: 0;
   padding: 0;
 }

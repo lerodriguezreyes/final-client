@@ -4,20 +4,21 @@ import "../styles/home.css";
 function HomePage() {
   return (
     <div className="homePage">
+      <div>
+        <div className="cutout1">
+          <p id="slogan1">
+            The Power of the People | By the People | For the People |The Power
+            of the People | By the People | For the People{" "}
+          </p>
+        </div>
+      </div>
       <VideoPlayer />
-      <div className="grid">
+      
         <div className="statsAndAction">
           <div className="columns">
-            <div className="cutout">
-              <p className="center">Bills in</p>
-              <p className="bigNumber">290,007 </p>
-              <p className="center">50 years</p>
-            </div>
-          </div>
-          <div className="columns">
-            <div className="cutout">
-              <p id="slogan">Where do we fit in this process?</p>
-            </div>
+            <div className="cutout2">
+              <p id="slogan2">Power... is it really the people's power?</p>
+      
           </div>
         </div>
       </div>

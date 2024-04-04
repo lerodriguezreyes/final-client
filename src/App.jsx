@@ -38,9 +38,7 @@ function App() {
         <Route path="/forum" element={<Forum />} />
         <Route path="*" element={<Error />} />
         
-
         <Route element={<LoggedIn />}>
-        <Route path="/user" element={<UserDashboard />} />
         <Route path="/comment" element={<UserDashboard />} />
         <Route path="/billpost/:billId" element={<BillPost />} />
         </Route>

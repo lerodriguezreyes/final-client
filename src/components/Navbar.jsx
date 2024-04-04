@@ -54,12 +54,6 @@ function Navbar() {
             {getToken() ? (
               <>
                 <li>
-                  <Link to="/user">
-                    <button className="navButton">UserDashboard</button>
-                  </Link>
-                  ☚
-                </li>
-                <li>
                   <button className="navButton" onClick={logOutUser}>Logout</button>☚
                 </li>
               </>

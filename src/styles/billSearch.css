@@ -7,3 +7,44 @@
 font-family: "dada";
 font-size: 30pt;
 }
+.card {
+    display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+    border: 2.5px solid black; 
+    border-radius: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.349); 
+    height: auto; 
+    width: 500px;
+    background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1712212433/dadaPaper_zbgvsp.png);
+  }
+  
+  .cardHeader, .text {
+    margin: 10px 0; 
+  }
+  .cardbutton {
+    align-self: flex-end;
+    margin-top: auto; 
+    cursor: pointer;
+  }
+  .infoRow {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px; 
+  }
+  
+  .card:hover {
+    background-color:rgb(222,22,0);
+    background-image: none;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.cardContainer {
+    display: flex;
+    justify-content: center; 
+  }
