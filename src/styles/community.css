@@ -1,6 +1,7 @@
 #community {
     background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711418796/isDemocracy/dalle1_yayynk.png);
     background-size: contain;
+    min-height: 650px;
 }
 
 #community h1{
@@ -14,7 +15,7 @@
 .userCard {
     display: flex;
     justify-content: center;
-    padding: 20px;
+    padding: 10 px;
   }
 
 .cardContainer {
@@ -26,6 +27,7 @@
   width: 300px;
   height: 300px;
   display: block;
+  border-radius: 10%;
 }
 
 .cardText1 {

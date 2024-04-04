@@ -3,6 +3,7 @@ import { AuthContext } from "../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
 import { post } from "../services/authService";
 import { fileChange } from "../services/imageUpload";
+import "../styles/signUp.css"
 
 function SignupPage() {
   const [newUser, setNewUser] = useState({

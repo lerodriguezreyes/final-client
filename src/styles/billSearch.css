@@ -1,6 +1,7 @@
 .billSearch{
     background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711418379/isDemocracy/1457241706220_vx75d9.jpg);
     background-size: contain;
+    min-height: 675px;
 }
 
 .billSearch h2{

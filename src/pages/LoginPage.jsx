@@ -2,7 +2,8 @@ import { useState, useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 import { Link, useNavigate } from "react-router-dom";
 import { post } from "../services/authService";
-import "../styles/form.css"
+import "../styles/signin.css"
+
 
 function LoginPage() {
   //   const [email, setEmail] = useState("");

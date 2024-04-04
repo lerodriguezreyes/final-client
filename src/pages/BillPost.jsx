@@ -3,41 +3,48 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { get, post } from "../services/authService";
 import { returnReadableTimeOnlyDate } from "../services/time";
+import CommentCard from "../components/CommentCard";
 import "../styles/billpostPage.css"
 
 function BillPost() {
-  const [getBillDetails, setGetBillDetails] = useState(null);
-  const [getComments, setGetComments] = useState(null);
+  const [getBillDetails, setGetBillDetails] = useState('');
   const [comment, setComment] = useState(null);
   const { billId } = useParams();
 
   useEffect(() => {
     console.log("this is the bill ID ===>", billId);
 
-    get(`/bills/details/${billId}`)
+    get(`/bills/conversation/${billId}`)
       .then((response) => {
-        console.log("This object has the bill's details ===>", response.data);
+        console.log("This object has the bill's details for the commments ===>", response.data);
         setGetBillDetails(response.data);
       })
       .catch((error) => {
         console.log("Error getting the bill's details ===>", error);
       });
-  }, [billId]);
+  }, []);
 
   const navigate = useNavigate();
   const handleBack = (e) => {
     navigate("/forum");
   };
+
   const handleChange = (e) => {
     setComment(e.target.value)
   };
 
+const submissionObject = {
+  comment: comment,
+  bill: `${getBillDetails._id}`
+} 
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    post("/comments/new", comment)
+    post("/comments/new", submissionObject)
       .then((response) => {
         console.log("New comment ===>", response.data);
-        setGetComments(response.data);
+      setGetBillDetails(response.data)
+      setComment("")
       })
       .catch((error) => {
         console.log("Error posting ===>", error);
@@ -65,14 +72,18 @@ function BillPost() {
           ) : (
             <p>Congess has not yet made availible a document of this bill.</p>
           )}
+          <CommentCard getBillDetails={getBillDetails} setGetBillDetails={setGetBillDetails} />
         </>
       )}
       <form className="addComment" onSubmit={handleSubmit}>
         <label> Express yourself! </label>
+        <br />
         <textarea
           className="row"
           type="text"
           name="comment"
+          value={comment}
+          placeholder="placeholder"
           onChange={(e) => handleChange(e)}
         />
         <br />

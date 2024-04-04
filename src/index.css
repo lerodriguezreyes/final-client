@@ -1,15 +1,4 @@
 /* src/index.css */
-.xanh-mono-regular {
-  font-family: "Xanh Mono", monospace;
-  font-weight: 400;
-  font-style: normal;
-}
-
-.xanh-mono-regular-italic {
-  font-family: "Xanh Mono", monospace;
-  font-weight: 400;
-  font-style: italic;
-}
 
 @font-face {
   font-family: "cutout";
@@ -37,7 +26,7 @@ button {
   font-size: 1.3rem;
 }
 
-Label {
+/* Label {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -47,26 +36,7 @@ Label {
   background-color: rgba(255, 255, 0, 0.404);
   font-weight: bold;
   font-size: 30pt;
-}
-
-.LoginPage,
-.SignupPage {
-  background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711417242/isDemocracy/4e9d789381021.5602dda746f89_ykquto.jpg);
-  background-size: 50%;
-  height: 844;
-  border: 1px solid grey;
-  text-align: center;
-  border-radius: 5px;
-}
-
-.LoginPage h1 {
-  font-family: "kidnapped";
-}
-
-.SignupPage {
-  background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711418143/isDemocracy/politik2_d0s93f.png);
-  background-size: cover;
-}
+} */
 
 .video{
   height: 300px;
