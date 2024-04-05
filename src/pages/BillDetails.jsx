@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import { get } from "../services/authService";
 import { returnReadableTimeOnlyDate } from "../services/time";
+import '../styles/billdetails.css'
 
 function BillDetails() {
   const { billId } = useParams();
@@ -25,56 +26,67 @@ function BillDetails() {
   }, [billId]);
 
   return (
-    <div>
+    <div className="billDetailsPage">
+          <h2 className="pageHeader">Bill Details</h2>
+          <div className="centeringContainer">
+          <div className="billCard">
       {billDetails && (
         <>
-          <h2 className="billDetailsPage">Bill Details</h2>
+
           <h3 className="cardDetailsHeader">{billDetails.title}</h3>
-          <p>Congress session: {billDetails.congress}</p>
-          <p>Bill number: {billDetails.billType.toUpperCase()}-{billDetails.billNumber}</p>
-          <p>Origin Chamber: {billDetails.originChamber}</p>
+          <p className="cardText"> <strong>Congress session:</strong> {billDetails.congress}</p>
+          <p className="cardText"><strong> Bill number:</strong> {billDetails.billType.toUpperCase()}-{billDetails.billNumber}</p>
+          <p className="cardText"><strong>Origin Chamber:</strong> {billDetails.originChamber}</p>
           
-          <p>Sponsor(s): {billDetails.sponsors}</p>
-          <p>Cosponsors: {billDetails.cosponsors} </p>
-          <p>
-            Date introduced:{" "}
+          <p className="cardText"><strong>Sponsor(s):</strong> {billDetails.sponsors}</p>
+          <p className="cardText"><strong>Cosponsors:</strong> {billDetails.cosponsors} </p>
+          <p className="cardText">
+            <strong>Date introduced:{" "}</strong>
             {returnReadableTimeOnlyDate(billDetails.introducedDate)}{" "}
           </p>
-          <p>Latest action: {billDetails.latestActionText}</p>
-          <p>
-            Latest action date:{" "}
+          <p> <strong>Latest action:</strong> {billDetails.latestActionText}</p>
+          <p className="cardText">
+            <strong>Latest action date:</strong>{" "}
             {returnReadableTimeOnlyDate(billDetails.latestActionDate)}{" "}
           </p>
-          <p> Bill Summary </p>
           {billDetails.summary?.text ? (
-            <div
+            <div className="cardSummary"
               dangerouslySetInnerHTML={{ __html: billDetails.summary.text }}
             />
           ) : (
-            <p>Congess has not yet made availible a summary of this bill.</p>
+            <p className="cardText">Congess has not yet made availible a summary of this bill.</p>
           )}
           {billDetails.latestTextPdfLink ? (
-            <Link target="_blank" to={billDetails.latestTextPdfLink}>
+            <Link className="cardLink" target="_blank" to={billDetails.latestTextPdfLink}>
               {" "}
-              Check the latest text of this bill{" "}
+              <span>Check the latest text of this bill{" "}</span>
             </Link>
           ) : (
-            <p>Congess has not yet made availible a document of this bill.</p>
-          )}
-          <p>Lets talk about this bill! </p>
-          <button onClick={
-            ()=>{navigate(`/billpost/${billId}`)}
-          }> Join the conversation!</button>
-          <button
-            onClick={() => {
-              navigate("/billlookup");
-            }}
-          >
-            {" "}
-            Look up another bill!
-          </button>
+            <p className="cardText">Congess has not yet made availible a document of this bill.</p>
+          )}       
         </>
       )}
+      </div>
+</div>
+      <div className="buttongroup">
+        <button
+          onClick={() => {
+            navigate("/billlookup");
+          }}
+        >
+          {" "}
+          Look up another bill!
+        </button>
+        <button
+          onClick={() => {
+            navigate(`/billpost/${billId}`);
+          }}
+        >
+          {" "}
+          Join the conversation!
+        </button>
+      </div>
+
     </div>
   );
 }
