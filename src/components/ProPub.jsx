@@ -66,9 +66,9 @@ const ProPub = () => {
 
   return (
     <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Search Bills
+      <form className="form" onSubmit={handleSubmit}>
+        <label className="searchbillslabel">
+          Bill Lookup:
           </label> 
           <input
             type="text"
