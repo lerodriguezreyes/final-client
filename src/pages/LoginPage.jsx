@@ -47,7 +47,7 @@ function LoginPage() {
     <div className="LoginPage">
       <div className="cutoutShadow">
       <div className="loginFormCutout">
-      <h1>Login</h1>
+      <h1 className="headerfontoptions">Login</h1>
       <form className="loginForm" onSubmit={handleLoginSubmit}>
         <label className="loginFormLabel">Email:</label>
         <input
@@ -69,8 +69,8 @@ function LoginPage() {
       </form>
       {errorMessage && <p className="loginFormText">{errorMessage}</p>}
 
-      <p className="loginFormText">Don't have an account yet?</p>
-      <Link className="loginFormLink" to={"/signup"}> Sign Up</Link>
+      <p className="fontoptions">Don't have an account yet?</p>
+      <Link className="fontoptions" to={"/signup"}> Sign Up</Link>
     </div>
     </div>
     </div>

@@ -1,34 +1,46 @@
 .LoginPage{  
   background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711417242/isDemocracy/4e9d789381021.5602dda746f89_ykquto.jpg);
-  background-size: 60%;
+  background-size: contain;
   min-height: 675px;
   border: 1px solid grey;
   text-align: center;
-  border-radius: 5px;}
-
-.LoginPage h1 {
-  font-family: "kidnapped";
-  
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+  
+  
+  .headerfontoptions{
+    font-family: "kidnapped";
+    font-size: 36pt;
+    background-color: antiquewhite;    
+  }
 
-
-.signInFormLabel {
+  .fontoptions{
+    font-family: dada;
+    background-color: antiquewhite;
+    font-size: 24pt;
+    font-weight: 700; 
+  }
+  
+  .loginFormLabel {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
     font-family: dada;
     color: red;
-    background-color: rgba(255, 255, 0, 0.404);
+    background-color: rgba(250, 235, 215, 0.555); 
     font-weight: bold;
     font-size: 30pt;
   }
   
-  .signUpFormCutout {
+  .loginFormCutout {
     height: auto;
     width: fit-content;
     padding: 20px;
-    background-image: url(https://raw.githubusercontent.com/lerodriguezreyes/m1p-echoes/main/Images/note1.jpg);
+    background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1712206866/hand-drawn-old-newspaper-background_23-2149626701_jwp0kb_sptrl4.jpg);
     clip-path: polygon(
       1% 2%,
       3.5% 0.1%,
@@ -112,3 +124,4 @@
       1.1% 5.5%
     );
   }
+  

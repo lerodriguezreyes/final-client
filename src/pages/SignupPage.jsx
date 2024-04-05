@@ -14,10 +14,15 @@ function SignupPage() {
   const [errorMessage, setErrorMessage] = useState(undefined);
   const { storeToken, authenticateUser } = useContext(AuthContext);
   const [disabled, setDisabled] = useState(false);
+  const [images, setImages] = useState(null)
   const navigate = useNavigate();
+
+
   const handleTextChange = (e) => {
     setNewUser((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
+
+
   const handleSignupSubmit = (e) => {
     e.preventDefault();
 
@@ -43,9 +48,13 @@ function SignupPage() {
     setDisabled(true);
     fileChange(e).then((response) => {
       setImages(response.data.image);
+      console.log(response.data.image)
+      setNewUser(prev => ({...prev, profilePicURL: response.data.image}) )
       setDisabled(false);
     });
   };
+
+
   return (
     <div className="SignupPage">
       <div className="cutoutShadow">
@@ -86,7 +95,8 @@ function SignupPage() {
               onChange={handlePhoto}
             />
             <br />
-            <button type="submit">Sign Up</button>
+          
+            <button type="submit" disabled={disabled}>Sign Up</button>
           </form>
 
           {errorMessage && <p className="error-message">{errorMessage}</p>}

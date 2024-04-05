@@ -3,10 +3,13 @@
   min-height: 675px;
   border: 1px solid grey;
   text-align: center;
-  border-radius: 5px;
   background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711418143/isDemocracy/politik2_d0s93f.png);
   background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
 
 .SignupPage{
   font-family: "kidnapped";
@@ -29,7 +32,7 @@
   height: auto;
   width: fit-content;
   padding: 20px;
-  background-image: url(https://raw.githubusercontent.com/lerodriguezreyes/m1p-echoes/main/Images/note1.jpg);
+  background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1712268141/signupformtransparent_hqbcow.png);
   clip-path: polygon(
     1% 2%,
     3.5% 0.1%,
