@@ -1,5 +1,44 @@
-.billPostPage{
-    background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1712216944/dadawoman_bsktl5.png);
-    background-size: contain;
-    min-height: 600px;
+.billPostPage {
+  background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1712216944/dadawoman_bsktl5.png);
+  background-size: contain;
 }
+
+.header{
+    margin: 0;
+    font-family: "kidnapped";
+    font-size: 32pt;
+    color: rgb(171, 31, 35);
+    padding-bottom: 25px;
+}
+
+.centering {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.billCard {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 75%;
+  height: fit-content;
+  background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1712268141/signupformtransparent_hqbcow.png);
+  font-family: "Old newspaper font", sans-serif;
+}
+
+.billCard h3 {
+    font-family: "Old newspaper font", sans-serif;
+}
+
+.cardLink {
+    cursor: pointer;
+    text-align: center;
+    font-family: dada;
+    font-size: 20pt;
+    font-weight: 800;
+  }
+
+  .cardLink span {
+    background-color: rgb(171, 31, 35);
+  }

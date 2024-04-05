@@ -1,0 +1,65 @@
+.billDetailsPage {
+  background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711418794/isDemocracy/dalle5_wzc2fl.png);
+  background-size: cover;
+  min-height: 715px;
+}
+
+.pageHeader {
+  margin: 0;
+  font-family: "kidnapped";
+  font-size: 32pt;
+  color: rgb(171, 31, 35);
+  padding-bottom: 25px;
+}
+
+.centeringContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.billCard {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffffb6;
+  border-radius: 8px;
+  padding: 20px;
+  width: 80%;
+  height: 525px
+}
+
+.cardDetailsHeader {
+  font-size: 16pt;
+  color:black;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.cardText {
+  font-size: 14pt;
+  color: black;
+  margin-bottom: 5px;
+}
+
+.cardLink {
+  cursor: pointer;
+  text-align: center;
+  font-family: dada antiquerist;
+  font-size: 16pt;
+  font-weight: 800;
+}
+
+.cardLink span {
+  background-color: rgb(171, 31, 35);
+}
+
+.cardSummary {
+  margin-top: 10px;
+  color: black;
+}
+
+.buttongroup {
+  display: flex;
+  justify-content: space-between;
+  padding: 25px;
+}
