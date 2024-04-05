@@ -1,5 +1,6 @@
 #BuzzBoard {
   background-image: url(https://res.cloudinary.com/dw1igjvgi/image/upload/v1711418145/isDemocracy/politik3_ghywxm.png);
+min-height: 666px;
 }
 
 #BuzzBoard h1 {
@@ -8,6 +9,7 @@
     font-size: 32pt;
     background-color: rgb(235,227,206);
     color: rgb(171,31,35);
+    
 }
 .cardHeader1,
 .text1 {

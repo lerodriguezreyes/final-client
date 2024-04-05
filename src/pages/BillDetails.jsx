@@ -62,7 +62,9 @@ function BillDetails() {
             <p>Congess has not yet made availible a document of this bill.</p>
           )}
           <p>Lets talk about this bill! </p>
-          <button> Join the conversation!</button>
+          <button onClick={
+            ()=>{navigate(`/billpost/${billId}`)}
+          }> Join the conversation!</button>
           <button
             onClick={() => {
               navigate("/billlookup");
