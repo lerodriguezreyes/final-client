@@ -9,7 +9,6 @@ import BillLookup from "./pages/BillLookup";
 import Community from "./pages/Community";
 import Forum from "./pages/Forum";
 import BillDetails from "./pages/BillDetails";
-import UserDashboard from "./pages/UserDashboard"
 import Error from "./pages/Error"
 import BillPost from "./pages/BillPost";
 
@@ -39,7 +38,6 @@ function App() {
         <Route path="*" element={<Error />} />
         
         <Route element={<LoggedIn />}>
-        <Route path="/comment" element={<UserDashboard />} />
         <Route path="/billpost/:billId" element={<BillPost />} />
         </Route>
 
