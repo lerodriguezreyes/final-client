@@ -53,37 +53,41 @@ const submissionObject = {
 
   return (
     <div className="billPostPage">
+    <div className="header"> Calling all the DADA's of the World: Let's talk about this!
+    </div>
+      <div className="centering">
       {getBillDetails && (
-        <>
+        <div className="billCard">
           <h3 className="cardDetailsHeader">{getBillDetails.title}</h3>
-          <p>Congress session: {getBillDetails.congress}</p>
+          <p><strong>Congress session:</strong> {getBillDetails.congress}</p>
           <p>
-            Bill number: {getBillDetails.billType.toUpperCase()}-
+            <strong>Bill number:</strong> {getBillDetails.billType.toUpperCase()}-
             {getBillDetails.billNumber}
           </p>
-          <p>Sponsor(s): {getBillDetails.sponsors}</p>
-          <p>Latest action: {getBillDetails.latestActionText}</p>
-          <p>Latest action date: {returnReadableTimeOnlyDate(getBillDetails.latestActionDate)}{" "} </p>
+          <p> <strong>Sponsor(s):</strong> {getBillDetails.sponsors}</p>
+          <p><strong>Latest action:</strong> {getBillDetails.latestActionText}</p>
+          <p><strong>Latest action date:</strong> {returnReadableTimeOnlyDate(getBillDetails.latestActionDate)}{" "} </p>
           {getBillDetails.latestTextPdfLink ? (
-            <Link target="_blank" to={getBillDetails.latestTextPdfLink}>
+            <Link className="cardLink" target="_blank" to={getBillDetails.latestTextPdfLink}>
               {" "}
-              Check the latest text of this bill{" "}
+              <span>Check the latest text of this bill{" "}</span>
             </Link>
           ) : (
             <p>Congess has not yet made availible a document of this bill.</p>
           )}
-          <CommentCard getBillDetails={getBillDetails} setGetBillDetails={setGetBillDetails} />
-        </>
+        </div>
       )}
+
+      </div>
+      <CommentCard getBillDetails={getBillDetails} setGetBillDetails={setGetBillDetails} />
       <form className="addComment" onSubmit={handleSubmit}>
-        <label> Express yourself! </label>
         <br />
         <textarea
           className="row"
           type="text"
           name="comment"
           value={comment}
-          placeholder="placeholder"
+          placeholder="Express yourself!"
           onChange={(e) => handleChange(e)}
         />
         <br />
