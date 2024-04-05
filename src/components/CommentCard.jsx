@@ -4,23 +4,42 @@ import { axiosDelete, post } from "../services/authService";
 import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../context/auth.context";
 
-function CommentCard({ getBillDetails, setGetBillDetails }) {
+function CommentCard({ getBillDetails, setGetBillDetails , getDetails}) {
   const { user } = useContext(AuthContext);
   const [editing, setEditing] = useState({ editing: false, index: null });
   const [commentToEdit, setCommentToEdit] = useState(null);
+  const [editedComment, setEditedComment] = useState(null)
 
-  // const handleSubmit = (e, index) => {
-  //   e.preventDefault();
-  //   console.log(getBillDetails.comments[index]._id);
-  //   // post(`/comments/update/${getBillDetails.comments[index]._id}`, commentToEdit)
-  //   //   .then((response) => {
-  //   //     console.log("Edited comment", response.data);
-  //   //   })
-  //   //   .catch((error) => {
-  //   //     const errorDescription = error.response.data.message;
-  //   //     setErrorMessage(errorDescription);
-  //   //   });
-  // };
+  const handleSubmit = (e, index) => {
+    e.preventDefault();
+
+    console.log(
+      "This is the comment id that I want to edit. ==>",
+      getBillDetails.comments[index]._id
+    );
+
+    console.log(
+      "This is what is currently there ==>",
+      getBillDetails.comments[index].comment
+    );
+    
+    console.log("This is what I edited ==>", commentToEdit);
+    
+    setCommentToEdit(commentToEdit);
+    
+    post(
+      `/comments/update/${getBillDetails.comments[index]._id}`,
+      {comment: commentToEdit}
+    )
+      .then((response) => {
+        console.log("Edited comment, this is what I sent ===>", response.data);
+      getDetails()
+      })
+      .catch((error) => {
+        const errorDescription = error.response.data.message;
+        setErrorMessage(errorDescription);
+      });
+  };
 
   const handleDelete = (comment) => {
     axiosDelete(`/comments/delete/${comment._id}`)
@@ -39,6 +58,7 @@ function CommentCard({ getBillDetails, setGetBillDetails }) {
   useEffect(() => {
     console.log(editing);
   }, [editing]);
+
   return (
     <>
       {getBillDetails.comments.map((comment, index) => {
@@ -67,7 +87,7 @@ function CommentCard({ getBillDetails, setGetBillDetails }) {
               <p className="commentowner"> {comment.owner.name} says: </p>
               <div>
                 {editing.editing && editing.index === index ? (
-                  <form>
+                  <form onSubmit={(e) => handleSubmit(e, index)}>
                     <input
                       type="text"
                       name="comment"

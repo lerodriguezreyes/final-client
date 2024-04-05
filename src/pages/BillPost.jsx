@@ -11,9 +11,7 @@ function BillPost() {
   const [comment, setComment] = useState(null);
   const { billId } = useParams();
 
-  useEffect(() => {
-    console.log("this is the bill ID ===>", billId);
-
+  const getDetails = () => {
     get(`/bills/conversation/${billId}`)
       .then((response) => {
         console.log("This object has the bill's details for the commments ===>", response.data);
@@ -22,6 +20,12 @@ function BillPost() {
       .catch((error) => {
         console.log("Error getting the bill's details ===>", error);
       });
+
+  }
+
+  useEffect(() => {
+    console.log("this is the bill ID ===>", billId);
+    getDetails()
   }, []);
 
   const navigate = useNavigate();
@@ -78,7 +82,7 @@ const submissionObject = {
           )}
           </div>
           </div>
-            <CommentCard getBillDetails={getBillDetails} setGetBillDetails={setGetBillDetails} />
+            <CommentCard getBillDetails={getBillDetails} setGetBillDetails={setGetBillDetails} getDetails={getDetails}/>
       </div>
       )}
       <form className="addComment" onSubmit={handleSubmit}>
