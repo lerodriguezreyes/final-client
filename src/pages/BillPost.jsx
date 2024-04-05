@@ -55,8 +55,9 @@ const submissionObject = {
     <div className="billPostPage">
     <div className="header"> Calling all the DADA's of the World: Let's talk about this!
     </div>
-      <div className="centering">
       {getBillDetails && (
+        <div>
+        <div className="centering">
         <div className="billCard">
           <h3 className="cardDetailsHeader">{getBillDetails.title}</h3>
           <p><strong>Congress session:</strong> {getBillDetails.congress}</p>
@@ -75,11 +76,11 @@ const submissionObject = {
           ) : (
             <p>Congess has not yet made availible a document of this bill.</p>
           )}
-        </div>
-      )}
-
+          </div>
+          </div>
+            <CommentCard getBillDetails={getBillDetails} setGetBillDetails={setGetBillDetails} />
       </div>
-      <CommentCard getBillDetails={getBillDetails} setGetBillDetails={setGetBillDetails} />
+      )}
       <form className="addComment" onSubmit={handleSubmit}>
         <br />
         <textarea
